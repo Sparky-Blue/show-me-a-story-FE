@@ -19,7 +19,7 @@ export class Stage extends Component {
             alt={docs[0].character.name}
           />
         </Character>
-        <div className={docs[0].weather} />
+        <div className={`${docs[0].weather} weather`} />
       </div>
     );
   }
