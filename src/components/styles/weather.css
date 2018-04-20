@@ -1,0 +1,53 @@
+.weather {
+  grid-column: 1/11;
+  grid-row: 1/21;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.storm {
+}
+
+.foggy {
+}
+
+.tornadoe {
+}
+
+.blizzard {
+}
+
+.nothing {
+}
+
+.icy {
+  background: whitesmoke;
+}
+.sunny {
+}
+
+.sunshine_and_showers {
+}
+
+.hail {
+}
+
+.windy {
+}
+.wind {
+}
+.rain {
+}
+
+.cloudy {
+}
+
+.rainbow {
+}
+
+.sleet {
+}
+.sandstorms {
+}
+.snowy {
+}
