@@ -12,6 +12,10 @@ class App extends Component {
     docs: []
   };
 
+  componentDidMount() {
+    this.subscribeToDB();
+  }
+
   handleInputChange = event => {
     const { target } = event;
     const { value, name } = target;
@@ -22,12 +26,40 @@ class App extends Component {
     this.setState({ message });
   };
 
+  subscribeToDB = () => {
+    db.collection("session").onSnapshot(querySnapshot => {
+      const docs = [];
+      querySnapshot.forEach(doc => {
+        docs.push(doc.data());
+      });
+      this.setState({
+        stageReady: true,
+        docs
+      });
+    });
+  };
+
+  toggleStage = () => {
+    this.setState({
+      stageReady: !this.state.stageReady
+    });
+  };
+
   render() {
     const { message, stageReady, docs } = this.state;
     return (
       <div className="audio-control">
-        <AudioControl bot={this.BOT} changeMessageTo={this.changeMessageTo} />
-        <Message message={message} />
+        {!stageReady && (
+          <div>
+            <AudioControl
+              bot={this.BOT}
+              changeMessageTo={this.changeMessageTo}
+            />
+            <Message message={message} />
+            <button onClick={this.toggleStage}>Test Stage View</button>
+          </div>
+        )}
+        {stageReady && <Stage docs={docs} />}
       </div>
     );
   }
