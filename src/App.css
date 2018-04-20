@@ -17,14 +17,14 @@
   top: 18px;
 }
 
-.audio-control {
+/* .audio-control {
   position: fixed;
   top: 50%;
   left: 50%;
   margin-top: -50px;
   margin-left: -50px;
   text-align: center;
-}
+} */
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
