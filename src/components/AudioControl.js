@@ -60,7 +60,7 @@ class AudioControl extends React.Component {
 
   render() {
     return (
-      <Fragment className="audioControl">
+      <Fragment>
         <button
           id="audio-control"
           onClick={this.handleAudioControlClick}
