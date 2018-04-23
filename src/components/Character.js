@@ -1,13 +1,25 @@
-import posed, { PoseGroup } from "react-pose";
+import posed from "react-pose";
 import React from "react";
 import "./styles/Character.css";
-
-import { spring } from "popmotion";
+import { easing, tween } from "popmotion";
 
 const poseProps = {
-  draggable: true
-  // dragBounds: { left: -100, right: 800 },
-  // dragEnd: { transition: spring }
+  animateOnMount: true,
+  draggable: true,
+  enter: {
+    x: -1000
+  },
+  start: {
+    x: 50
+    // transition: ({ props }) =>
+    //   tween({
+    //     ...props,
+    //     from: 0,
+    //     to: { x: 300, rotateY: 360 },
+    //     duration: 3000,
+    //     ease: easing.backOut
+    //   })
+  }
 };
 const Character = posed.div(poseProps);
 
