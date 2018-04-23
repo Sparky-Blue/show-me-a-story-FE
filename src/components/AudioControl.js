@@ -24,9 +24,9 @@ class AudioControl extends React.Component {
     AWS.config.region = "eu-west-1";
 
     const config = {
-      lexConfig: {
-        botName: bot
-      }
+      silenceDetection: true,
+      silenceDetectionConfig: { time: 3000, amplitude: 0.2 },
+      lexConfig: { botName: bot }
     };
 
     this.conversation = new LexAudio.conversation(
