@@ -30,6 +30,7 @@ class App extends Component {
     db.collection("session").onSnapshot(querySnapshot => {
       const docs = [];
       querySnapshot.forEach(doc => {
+        console.log(doc.data());
         docs.push(doc.data());
       });
       this.setState({
@@ -52,7 +53,7 @@ class App extends Component {
         {!stageReady && (
           <div>
             <AudioControl
-              bot={this.BOT}
+              bot="set_the_scene"
               changeMessageTo={this.changeMessageTo}
             />
             <Message message={message} />
