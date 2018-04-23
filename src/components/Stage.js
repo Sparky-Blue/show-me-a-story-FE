@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import "./styles/Stage.css";
 import Character from "./Character";
 import "./styles/weather.css";
-import AudioControl from "./AudioControl";
-import Message from "./Message";
 import Extras from "./Extras";
-import { hostRef } from "react-pose";
+import Weather from "./Weather";
 
 export class Stage extends Component {
   state = {
-    message: "Passive",
     extras: [
       {
         value: "hat",
@@ -39,7 +36,6 @@ export class Stage extends Component {
 
   render() {
     console.log(this.props.docs);
-    console.log(hostRef);
     const { docs } = this.props;
     return (
       <div
@@ -57,9 +53,7 @@ export class Stage extends Component {
           />
         </Character>
         <Extras extras={this.state.extras} />
-        <div className={`${docs[0].weather} weather`} />
-        <AudioControl bot="add_props" changeMessageTo={this.changeMessageTo} />
-        <Message message={this.state.message} />
+        <Weather weatherType={docs[0].weather} />
       </div>
     );
   }

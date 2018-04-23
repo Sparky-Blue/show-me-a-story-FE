@@ -8,10 +8,10 @@
 .storm {
 }
 
-.foggy {
+.fog {
 }
 
-.tornadoe {
+.tornado {
 }
 
 .blizzard {
@@ -20,10 +20,10 @@
 .nothing {
 }
 
-.icy {
-  background: whitesmoke;
+.ice {
 }
-.sunny {
+
+.sun {
 }
 
 .sunshine_and_showers {
@@ -32,14 +32,13 @@
 .hail {
 }
 
-.windy {
-}
 .wind {
 }
+
 .rain {
 }
 
-.cloudy {
+.cloud {
 }
 
 .rainbow {
@@ -47,7 +46,7 @@
 
 .sleet {
 }
-.sandstorms {
+.sandstorm {
 }
-.snowy {
+.snow {
 }
