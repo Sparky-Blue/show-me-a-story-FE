@@ -21,15 +21,10 @@ class Extras extends Component {
           return (
             <Extra
               className="extra"
-              key={extra.id}
+              key={i}
               pose={this.state.entering ? "up" : "down"}
             >
-              <img
-                className="extra"
-                key={i}
-                src={extra.url}
-                alt={extra.value}
-              />
+              <img className="extra" src={extra.url} alt={extra.value} />
             </Extra>
           );
         })}

@@ -7,18 +7,16 @@ const poseProps = {
   animateOnMount: true,
   draggable: true,
   enter: {
-    x: -1000
+    x: -2000
   },
   start: {
-    x: 50
-    // transition: ({ props }) =>
-    //   tween({
-    //     ...props,
-    //     from: 0,
-    //     to: { x: 300, rotateY: 360 },
-    //     duration: 3000,
-    //     ease: easing.backOut
-    //   })
+    x: 50,
+    transition: props =>
+      tween({
+        ...props,
+        ease: easing.backInOut,
+        duration: 1000
+      })
   }
 };
 const Character = posed.div(poseProps);

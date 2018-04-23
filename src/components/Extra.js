@@ -2,19 +2,21 @@ import posed, { PoseGroup } from "react-pose";
 import React from "react";
 // import "./styles/Extra.css";
 
-import { spring, tween } from "popmotion";
+import { spring, tween, physics, easing } from "popmotion";
 
 const poseProps = {
-  animateOnMount: true,
   draggable: true,
   up: {
-    y: "-1000%",
-    transition: props => spring({ ...props, duration: 5000 })
+    y: "-1000%"
   },
   down: {
     y: "100%",
-    duration: 10000,
-    transition: props => spring({ ...props, duration: 10000 })
+    transition: props =>
+      spring({
+        ...props
+        // ease: easing.backInOut,
+        // duration: 1000
+      })
   }
 };
 const Extra = posed.div(poseProps);
