@@ -4,6 +4,7 @@ import { easing, tween } from "popmotion";
 import Wind from "./Wind";
 import Rain from "./Rain";
 import Snow from "./Snow";
+import Cloudy from "./Cloudy";
 
 class Weather extends Component {
   render() {
@@ -11,7 +12,7 @@ class Weather extends Component {
     console.log(weatherType);
     return (
       <div className={`weather ${weatherType}`}>
-        {this.props.weatherType === "wind" ? <Wind /> : <Snow />}
+        {this.props.weatherType === "wind" ? <Cloudy /> : <Cloudy />}
       </div>
     );
   }
