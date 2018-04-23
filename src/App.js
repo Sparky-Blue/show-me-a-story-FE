@@ -49,17 +49,19 @@ class App extends Component {
   render() {
     const { message, stageReady, docs } = this.state;
     return (
-      <div className="audio-control">
-        {!stageReady && (
-          <div>
-            <AudioControl
-              bot="set_the_scene"
-              changeMessageTo={this.changeMessageTo}
-            />
-            <Message message={message} />
-            <button onClick={this.toggleStage}>Test Stage View</button>
-          </div>
-        )}
+      <div className="container">
+        <div className="audio-control">
+          {!stageReady && (
+            <div>
+              <AudioControl
+                bot="set_the_scene"
+                changeMessageTo={this.changeMessageTo}
+              />
+              <Message message={message} />
+              <button onClick={this.toggleStage}>Test Stage View</button>
+            </div>
+          )}
+        </div>
         {stageReady && <Stage docs={docs} />}
       </div>
     );
