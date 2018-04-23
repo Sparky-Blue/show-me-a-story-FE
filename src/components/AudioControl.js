@@ -15,8 +15,7 @@ class AudioControl extends React.Component {
   };
 
   handleAudioControlClick = e => {
-    const bot = "set_the_scene";
-    const { changeMessageTo } = this.props;
+    const { changeMessageTo, bot } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: "eu-west-1:3406189f-e003-43c7-a93b-95fa95a1b7b8"
