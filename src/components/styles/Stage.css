@@ -2,8 +2,7 @@
   background-size: cover;
   border: 1px black solid;
   width: 100vw;
-  height: 90vh;
-  min-height: 90vh;
+  height: 80vh;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(20, 1fr);
