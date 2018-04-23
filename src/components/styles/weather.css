@@ -5,6 +5,11 @@
   z-index: 0;
 }
 
+.rain {
+  display: flex;
+  flex-direction: row;
+}
+
 .storm {
 }
 

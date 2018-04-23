@@ -1,8 +1,7 @@
-import posed, { PoseGroup } from "react-pose";
-import React from "react";
+import posed from "react-pose";
 // import "./styles/Extra.css";
 
-import { spring, tween, physics, easing } from "popmotion";
+import { spring } from "popmotion";
 
 const poseProps = {
   draggable: true,
