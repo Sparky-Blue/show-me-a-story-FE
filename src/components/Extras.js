@@ -17,14 +17,15 @@ class Extras extends Component {
   render() {
     return (
       <Fragment>
-        {this.props.extras.map((extra, i) => {
+        {this.props.things.map((thing, i) => {
+          console.log(thing);
           return (
             <Extra
               className="extra"
               key={i}
               pose={this.state.entering ? "up" : "down"}
             >
-              <img className="extra" src={extra.url} alt={extra.value} />
+              <img className="extra" src={thing} alt="thing" />
             </Extra>
           );
         })}

@@ -11,7 +11,7 @@ class Wind extends Component {
   toggle = () => this.setState({ entering: !this.state.entering });
 
   render() {
-    const leaves = new Array(20).fill();
+    const leaves = new Array(30).fill();
     return leaves.map((leaf, index) => {
       return (
         <Leaves key={index} pose={this.state.entering ? "enter" : "exit"}>

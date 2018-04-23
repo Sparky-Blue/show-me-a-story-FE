@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     message: "Passive",
     stageReady: false,
-    docs: []
+    scene: {}
   };
 
   componentDidMount() {
@@ -27,17 +27,17 @@ class App extends Component {
   };
 
   subscribeToDB = () => {
-    db.collection("session").onSnapshot(querySnapshot => {
-      const docs = [];
-      querySnapshot.forEach(doc => {
-        console.log(doc.data());
-        docs.push(doc.data());
+    db
+      .collection("session")
+      .doc("scene1")
+      .onSnapshot(doc => {
+        const scene = doc.data();
+        console.log(scene);
+        this.setState({
+          stageReady: true,
+          scene
+        });
       });
-      this.setState({
-        stageReady: true,
-        docs
-      });
-    });
   };
 
   toggleStage = () => {
@@ -47,22 +47,26 @@ class App extends Component {
   };
 
   render() {
-    const { message, stageReady, docs } = this.state;
+    const { message, stageReady, scene } = this.state;
     return (
       <div className="container">
+        {/* <img
+          src="http://www.rjstax.com/wp-content/uploads/2014/03/Stage-Curtain-Shell-Cut-e1395618455582.png"
+          alt=""
+          className="curtains"
+        /> */}
         <div className="audio-control">
-          {!stageReady && (
+          {stageReady && (
             <div>
               <AudioControl
                 bot="set_the_scene"
                 changeMessageTo={this.changeMessageTo}
               />
               <Message message={message} />
-              <button onClick={this.toggleStage}>Test Stage View</button>
             </div>
           )}
         </div>
-        {stageReady && <Stage docs={docs} />}
+        {stageReady && <Stage scene={scene} />}
       </div>
     );
   }

@@ -35,25 +35,28 @@ export class Stage extends Component {
     });
 
   render() {
-    console.log(this.props.docs);
-    const { docs } = this.props;
+    const { scene } = this.props;
+    const characters = scene.characters ? Object.values(scene.characters) : [];
+    const things = scene.things ? Object.values(scene.things) : [];
+    const location = scene.location
+      ? scene.location.url
+      : "https://wallpapercave.com/wp/LDX4QKv.jpg";
+    const weather = scene.weather ? scene.weather : "rain";
+    console.log(things);
     return (
-      <div
-        className="stage"
-        style={{ backgroundImage: `url(${docs[0].location.url})` }}
-      >
-        <Character
-          className="character"
-          pose={this.state.entering ? "enter" : "start"}
-        >
-          <img
-            className="characterImg"
-            src={docs[0].character.url}
-            alt={docs[0].character.name}
-          />
-        </Character>
-        <Extras extras={this.state.extras} />
-        <Weather weatherType={docs[0].weather} />
+      <div className="stage" style={{ backgroundImage: `url(${location})` }}>
+        {characters.map(character => {
+          return (
+            <Character
+              className="character"
+              pose={this.state.entering ? "enter" : "start"}
+            >
+              <img className="characterImg" src={character} alt="character" />
+            </Character>
+          );
+        })}
+        <Extras things={things} />
+        <Weather weatherType={weather} />
       </div>
     );
   }
