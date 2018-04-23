@@ -18,7 +18,7 @@ const posePropsSnowflake = {
 export const Snowflake = posed.div(posePropsSnowflake);
 
 const posePropsSnowfall = {
-  there: { opacity: 1, y: Math.random() * 100 + 800 },
+  there: { opacity: 1, y: Math.random() * 50 + 750 },
   gone: {
     opacity: 0,
     transition: props =>
