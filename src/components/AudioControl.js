@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Fragment } from "react";
 import AWS from "aws-sdk";
 
 import Visualizer from "./Visualizer";
 import Waveform from "../utils/renderer";
+import "./styles/AudioControl.css";
 
 import LexAudio from "../utils/lexAudio";
 import lex from "../lex.png";
@@ -59,14 +60,16 @@ class AudioControl extends React.Component {
 
   render() {
     return (
-      <p
-        id="audio-control"
-        onClick={this.handleAudioControlClick}
-        className="white-circle"
-      >
-        <img src={lex} alt="lex" />
+      <Fragment className="audioControl">
+        <button
+          id="audio-control"
+          onClick={this.handleAudioControlClick}
+          className="white-circle"
+        >
+          Once upon a time...
+        </button>
         <Visualizer setWaveform={this.setWaveform} />
-      </p>
+      </Fragment>
     );
   }
 }
