@@ -5,14 +5,14 @@ import Wind from "./Wind";
 import Rain from "./Rain";
 import Snow from "./Snow";
 import Cloudy from "./Cloudy";
+import Sun from "./Sun";
 
 class Weather extends Component {
   render() {
     const { weatherType } = this.props;
-    console.log(weatherType);
     return (
       <div className={`weather ${weatherType}`}>
-        {this.props.weatherType === "wind" ? <Cloudy /> : <Cloudy />}
+        {this.props.weatherType === "wind" ? <Wind /> : <Rain />}
       </div>
     );
   }

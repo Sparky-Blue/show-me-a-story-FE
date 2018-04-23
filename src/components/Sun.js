@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ".styles/Sun.css";
+import "./styles/Sun.css";
 
 class Sun extends Component {
   render() {
