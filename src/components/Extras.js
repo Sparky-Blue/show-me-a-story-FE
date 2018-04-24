@@ -1,10 +1,6 @@
 import React, { Component, Fragment } from "react";
 import "./styles/Extras.css";
 import Extra from "./Extra";
-import posed, { PoseGroup } from "react-pose";
-//import "./styles/Extra.css";
-
-import { spring, tween } from "popmotion";
 
 class Extras extends Component {
   state = { entering: true };
@@ -18,7 +14,6 @@ class Extras extends Component {
     return (
       <Fragment>
         {this.props.things.map((thing, i) => {
-          console.log(thing);
           return (
             <Extra
               className="extra"
