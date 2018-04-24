@@ -44,9 +44,6 @@
 .wind {
 }
 
-.rain {
-}
-
 .cloud {
 }
 
@@ -58,4 +55,7 @@
 .sandstorm {
 }
 .snow {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }

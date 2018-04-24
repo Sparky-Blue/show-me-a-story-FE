@@ -6,15 +6,35 @@ import Rain from "./Rain";
 import Snow from "./Snow";
 import Cloudy from "./Cloudy";
 import Sun from "./Sun";
+import Storm from "./Storm";
 
 class Weather extends Component {
   render() {
     const { weatherType } = this.props;
-    return (
-      <div className={`weather ${weatherType}`}>
-        {this.props.weatherType === "wind" ? <Wind /> : <Rain />}
-      </div>
-    );
+    let weather;
+    switch (weatherType) {
+      case "rain":
+        weather = <Rain />;
+        break;
+      case "wind":
+        weather = <Wind />;
+        break;
+      case "snow":
+        weather = <Snow />;
+        break;
+      case "cloudy":
+        weather = <Cloudy />;
+        break;
+      case "sunny":
+        weather = <Sun />;
+        break;
+      case "storm":
+        weather = <Storm />;
+        break;
+      default:
+        weather = <div />;
+    }
+    return <div className={`weather ${weatherType}`}>{weather}</div>;
   }
 }
 
