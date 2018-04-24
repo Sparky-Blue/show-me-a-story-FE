@@ -4,6 +4,7 @@ import Character from "./Character";
 import "./styles/weather.css";
 import Extras from "./Extras";
 import Weather from "./Weather";
+import Curtains from "./Curtains";
 
 export class Stage extends Component {
   state = {
@@ -45,6 +46,7 @@ export class Stage extends Component {
     console.log(things);
     return (
       <div className="stage" style={{ backgroundImage: `url(${location})` }}>
+        <Curtains id="curtains" />
         {characters.map(character => {
           return (
             <Character

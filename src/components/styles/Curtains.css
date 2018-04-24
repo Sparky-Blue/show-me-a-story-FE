@@ -1,0 +1,27 @@
+.button {
+  z-index: 5;
+}
+
+.left-curtain {
+  height: 1000px;
+}
+
+.right-curtain {
+  height: 100px;
+}
+
+.container {
+  height: 100vh;
+}
+
+.curtains {
+  height: 100%;
+}
+
+#left {
+  height: 1000px;
+}
+
+#right {
+  height: 1000px;
+}

@@ -7,10 +7,12 @@ import Snow from "./Snow";
 import Cloudy from "./Cloudy";
 import Sun from "./Sun";
 import Storm from "./Storm";
+import Rainbow from "./Rainbow";
 
 class Weather extends Component {
   render() {
     const { weatherType } = this.props;
+    console.log(weatherType);
     let weather;
     switch (weatherType) {
       case "rain":
@@ -25,11 +27,14 @@ class Weather extends Component {
       case "cloudy":
         weather = <Cloudy />;
         break;
-      case "sunny":
+      case "sun":
         weather = <Sun />;
         break;
       case "storm":
         weather = <Storm />;
+        break;
+      case "rainbow":
+        weather = <Rainbow />;
         break;
       default:
         weather = <div />;
