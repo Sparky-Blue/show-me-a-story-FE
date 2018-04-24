@@ -25,7 +25,7 @@ class AudioControl extends React.Component {
 
     const config = {
       silenceDetection: true,
-      silenceDetectionConfig: { time: 3000, amplitude: 0.2 },
+      silenceDetectionConfig: { time: 1500, amplitude: 0.3 },
       lexConfig: { botName: bot, userId }
     };
 
