@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/Stage.css";
-import Character from "./Character";
+import Character from "./posed/Character";
 import "./styles/weather.css";
 import Extras from "./Extras";
 import Weather from "./Weather";
