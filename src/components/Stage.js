@@ -6,20 +6,14 @@ import Extras from "./Extras";
 import Weather from "./Weather";
 
 export class Stage extends Component {
-  state = {
-    extras: [
-      {
-        value: "hat",
-        url:
-          "https://openclipart.org/image/2400px/svg_to_png/14834/nicubunu-Green-fedora.png"
-      },
-      {
-        value: "flySwatter",
-        url: "http://img11.hostingpics.net/pics/529757swat2.png"
-      }
-    ],
-    entering: true
-  };
+  state = { entering: true, curtainsClosed: true };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.scene.location) {
+      return { curtainsClosed: false };
+    }
+    return null;
+  }
 
   changeMessageTo = message => {
     this.setState({ message });
@@ -40,12 +34,13 @@ export class Stage extends Component {
     const things = scene.things ? Object.values(scene.things) : [];
     const location = scene.location ? scene.location.url : "";
     const weather = scene.weather ? scene.weather : "none";
-    console.log(things);
     return (
       <div className="stage" style={{ backgroundImage: `url(${location})` }}>
-        {characters.map(character => {
+        {!this.state.curtainsClosed && <div>HELLO</div>}
+        {characters.map((character, i) => {
           return (
             <Character
+              key={i}
               className="character"
               pose={this.state.entering ? "enter" : "start"}
             >
