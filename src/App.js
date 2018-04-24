@@ -38,12 +38,10 @@ class App extends Component {
       .collection("session")
       .doc(userId)
       .set({
-        scene: {
-          location: null,
-          weather: null,
-          characters: null,
-          things: null
-        }
+        location: null,
+        weather: null,
+        characters: null,
+        things: null
       });
   };
 
