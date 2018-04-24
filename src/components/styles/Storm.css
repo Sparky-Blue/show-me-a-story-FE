@@ -4,11 +4,12 @@
   overflow: hidden;
 }
 
-.fa-tint {
+#rain.fa-tint {
   color: skyblue;
   opacity: 1;
   font-size: 5vh;
 }
+
 #cloud1 {
   position: absolute;
   bottom: 120%;
