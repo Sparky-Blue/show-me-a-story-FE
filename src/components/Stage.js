@@ -36,12 +36,12 @@ export class Stage extends Component {
 
   render() {
     const { scene } = this.props;
-    const characters = scene.characters ? Object.values(scene.characters) : [];
-    const things = scene.things ? Object.values(scene.things) : [];
-    const location = scene.location
-      ? scene.location.url
-      : "https://wallpapercave.com/wp/LDX4QKv.jpg";
-    const weather = scene.weather ? scene.weather : "rain";
+    const characters = scene.characters.name
+      ? Object.values(scene.characters)
+      : [];
+    const things = scene.things.value ? Object.values(scene.things) : [];
+    const location = scene.location.url ? scene.location.url : "";
+    const weather = scene.weather ? scene.weather : "none";
     console.log(things);
     return (
       <div className="stage" style={{ backgroundImage: `url(${location})` }}>
