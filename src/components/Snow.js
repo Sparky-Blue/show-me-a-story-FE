@@ -15,12 +15,15 @@ class Snow extends Component {
     const snow = new Array(35).fill();
     return snow.map((snowflake, index) => {
       return (
-        <Fragment>
-          <Snowflake key={index} pose={this.state.entering ? "enter" : "exit"}>
-            <i class="far fa-snowflake" />
+        <Fragment key={index + 0.1}>
+          <Snowflake
+            key={index + 0.5}
+            pose={this.state.entering ? "enter" : "exit"}
+          >
+            <i className="far fa-snowflake" />
           </Snowflake>
           <Snowfall key={index} pose={this.state.entering ? "there" : "gone"}>
-            <i class="far fa-snowflake" />
+            <i className="far fa-snowflake" />
           </Snowfall>
         </Fragment>
       );
