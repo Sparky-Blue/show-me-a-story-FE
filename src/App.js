@@ -39,7 +39,7 @@ class App extends Component {
       .doc(userId)
       .set({
         scene: {
-          location: {},
+          location: null,
           weather: null,
           characters: null,
           things: null
