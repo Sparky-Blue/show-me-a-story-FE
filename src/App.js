@@ -10,13 +10,10 @@ class App extends Component {
     message: "Passive",
     stageReady: false,
     scene: {
-      location: {
-        url: "https://i.ytimg.com/vi/r3y-6NLR5mo/maxresdefault.jpg",
-        value: "blank"
-      },
-      weather: "",
-      characters: { name: "", url: "" },
-      things: { value: "" }
+      location: {},
+      weather: null,
+      characters: null,
+      things: null
     },
     userId: `${Date.now()}`
   };
@@ -41,13 +38,12 @@ class App extends Component {
       .collection("session")
       .doc(userId)
       .set({
-        location: {
-          url: "",
-          value: "blank"
-        },
-        weather: "",
-        characters: { name: "", url: "" },
-        things: { value: "" }
+        scene: {
+          location: {},
+          weather: null,
+          characters: null,
+          things: null
+        }
       });
   };
 
