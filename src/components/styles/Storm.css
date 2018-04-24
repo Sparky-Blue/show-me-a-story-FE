@@ -1,0 +1,20 @@
+#rain {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.fa-tint {
+  color: skyblue;
+  opacity: 1;
+  font-size: 5vh;
+}
+#cloud1 {
+  position: absolute;
+  bottom: 120%;
+  width: 100%;
+  opacity: 1;
+}
+.container {
+  width: 100vw;
+}
