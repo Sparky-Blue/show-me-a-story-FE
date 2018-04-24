@@ -4,8 +4,6 @@ const workercode = self => {
     recordSampleRate;
 
   self.onmessage = function(e) {
-    // without self, onmessage is not defined
-    console.log("I am inside the worker");
     switch (e.data.command) {
       case "init":
         init(e.data.config);

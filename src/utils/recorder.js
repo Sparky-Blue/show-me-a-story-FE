@@ -159,7 +159,6 @@ const audioRecorder = function() {
   };
 
   var createRecorder = function(silenceDetectionConfig) {
-    console.log("creating the recorder");
     return recorder(
       audio_context.createMediaStreamSource(audio_stream),
       silenceDetectionConfig

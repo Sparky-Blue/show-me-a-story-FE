@@ -44,7 +44,6 @@ var Sending = function(state) {
   state.message = state.messages.SENDING;
   this.advanceConversation = function() {
     state.lexConfig.inputStream = state.audioInput;
-    console.log("About to post this content:", state.lexConfig);
     lexruntime.postContent(state.lexConfig, function(err, data) {
       if (err) {
         state.onError(err);
