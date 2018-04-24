@@ -9,11 +9,13 @@ class App extends Component {
   state = {
     message: "Passive",
     stageReady: false,
-    scene: {}
+    scene: {},
+    userId: `${Date.now()}`
   };
 
   componentDidMount() {
-    this.subscribeToDB();
+    this.addNewScene(this.state.userId);
+    this.subscribeToDB(this.state.userId);
   }
 
   handleInputChange = event => {
@@ -26,13 +28,19 @@ class App extends Component {
     this.setState({ message });
   };
 
-  subscribeToDB = () => {
+  addNewScene = userId => {
     db
       .collection("session")
-      .doc("scene1")
+      .doc(userId)
+      .set({});
+  };
+
+  subscribeToDB = userId => {
+    db
+      .collection("session")
+      .doc(userId)
       .onSnapshot(doc => {
         const scene = doc.data();
-        console.log(scene);
         this.setState({
           stageReady: true,
           scene
@@ -47,7 +55,8 @@ class App extends Component {
   };
 
   render() {
-    const { message, stageReady, scene } = this.state;
+    console.log(this.state.userId);
+    const { message, stageReady, scene, userId } = this.state;
     return (
       <div className="container">
         {/* <img
@@ -61,6 +70,7 @@ class App extends Component {
               <AudioControl
                 bot="set_the_scene"
                 changeMessageTo={this.changeMessageTo}
+                userId={userId}
               />
               <Message message={message} />
             </div>

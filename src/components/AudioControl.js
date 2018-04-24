@@ -16,7 +16,7 @@ class AudioControl extends React.Component {
   };
 
   handleAudioControlClick = e => {
-    const { changeMessageTo, bot } = this.props;
+    const { changeMessageTo, bot, userId } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: "eu-west-1:3406189f-e003-43c7-a93b-95fa95a1b7b8"
@@ -26,7 +26,7 @@ class AudioControl extends React.Component {
     const config = {
       silenceDetection: true,
       silenceDetectionConfig: { time: 3000, amplitude: 0.2 },
-      lexConfig: { botName: bot }
+      lexConfig: { botName: bot, userId }
     };
 
     this.conversation = new LexAudio.conversation(
