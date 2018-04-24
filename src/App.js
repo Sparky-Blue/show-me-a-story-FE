@@ -9,7 +9,15 @@ class App extends Component {
   state = {
     message: "Passive",
     stageReady: false,
-    scene: {},
+    scene: {
+      location: {
+        url: "https://i.ytimg.com/vi/r3y-6NLR5mo/maxresdefault.jpg",
+        value: "blank"
+      },
+      weather: "",
+      characters: { name: "", url: "" },
+      things: { value: "" }
+    },
     userId: `${Date.now()}`
   };
 
@@ -32,7 +40,15 @@ class App extends Component {
     db
       .collection("session")
       .doc(userId)
-      .set({});
+      .set({
+        location: {
+          url: "",
+          value: "blank"
+        },
+        weather: "",
+        characters: { name: "", url: "" },
+        things: { value: "" }
+      });
   };
 
   subscribeToDB = userId => {
