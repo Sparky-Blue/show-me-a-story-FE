@@ -13,14 +13,7 @@ class App extends Component {
       location: {},
       weather: null,
       characters: null,
-      things: {
-        hat:
-          "https://upload.wikimedia.org/wikipedia/commons/7/75/Purple_Fedora_hat.png",
-        flowers:
-          "https://www.commentsyard.com/wp-content/uploads/2015/07/Flower-Bucket.png",
-        chocolate:
-          "http://www.pngpix.com/wp-content/uploads/2016/07/PNGPIX-COM-Chocolate-PNG-Transparent-Image-1-1.png"
-      }
+      things: null
     },
     userId: `${Date.now()}`
   };
