@@ -1,9 +1,7 @@
 .weather {
-  grid-column: 1/11;
-  grid-row: 1/21;
   opacity: 0.5;
   z-index: 0;
-  width: 100vw;
+  width: 98vw;
   height: 80vh;
   overflow: hidden;
 }

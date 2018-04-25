@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./styles/Stage.css";
 import Character from "./posed/Character";
 import "./styles/weather.css";
@@ -31,21 +31,35 @@ export class Stage extends Component {
     const location = scene.location ? scene.location.url : "";
     const weather = scene.weather ? scene.weather : "none";
     return (
-      <div className="stage" style={{ backgroundImage: `url(${location})` }}>
-        {!this.state.curtainsClosed && <div>HELLO</div>}
-        <PoseGroup>
-          {characters.map((character, i) => {
-            return (
-              <Character key={i} className="character">
-                <img className="characterImg" src={character} alt="character" />
-              </Character>
-            );
-          })}
-        </PoseGroup>
-        <Extras things={things} />
-        <Weather weatherType={weather} />
-        <Screen className="screen" />
-      </div>
+      <Fragment>
+        {this.state.curtainsClosed ? (
+          <Screen
+            className="screen"
+            // pose={this.state.curtainsClosed ? "exit" : "enter"}
+          />
+        ) : (
+          <div
+            className="stage"
+            style={{ backgroundImage: `url(${location})` }}
+          >
+            <PoseGroup>
+              {characters.map((character, i) => {
+                return (
+                  <Character
+                    key={i}
+                    className="character"
+                    style={{ backgroundImage: `url(${character})` }}
+                  >
+                    {/* <img className="characterImg" src={character} alt="character" /> */}
+                  </Character>
+                );
+              })}
+            </PoseGroup>
+            <Extras things={things} />
+            <Weather weatherType={weather} />
+          </div>
+        )}
+      </Fragment>
     );
   }
 }

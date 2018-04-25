@@ -1,10 +1,4 @@
 .character {
-  grid-column: 5;
-  grid-row: 15;
-  height: 100px;
   z-index: 2;
-}
-
-.characterImg {
   height: 50vh;
 }
