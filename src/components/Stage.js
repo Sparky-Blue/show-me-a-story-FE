@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import "./styles/Stage.css";
 import Character from "./posed/Character";
 import "./styles/weather.css";
+import "./styles/Screen.css";
 import Extras from "./Extras";
 import Weather from "./Weather";
+import Screen from "./posed/Screen";
 import { PoseGroup } from "react-pose";
 
 export class Stage extends Component {
@@ -42,6 +44,7 @@ export class Stage extends Component {
         </PoseGroup>
         <Extras things={things} />
         <Weather weatherType={weather} />
+        <Screen className="screen" />
       </div>
     );
   }
