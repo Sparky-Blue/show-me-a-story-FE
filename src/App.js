@@ -34,8 +34,8 @@ class App extends Component {
         const scene = doc.data();
         console.log(scene);
         this.setState({
-          stageReady: true,
-          scene
+          stageReady: true
+          //scene
         });
       });
   };
