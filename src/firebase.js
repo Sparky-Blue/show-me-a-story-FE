@@ -1,15 +1,10 @@
 import firebase from "firebase";
-console.log(process.env);
-const { apiKey, authDomain, projectId } =
-  process.env.NODE_ENV === "production"
-    ? process.env
-    : require("./firebaseConfig");
 require("firebase/firestore");
-console.log(projectId);
+
 firebase.initializeApp({
-  apiKey,
-  authDomain,
-  projectId
+  apiKey: "AIzaSyAGOlk_wapggnDXsxXf1aM1QXr02TRBAZ0",
+  authDomain: "stable-vault-201013.firebaseapp.com",
+  projectId: "stable-vault-201013"
 });
 const firestore = firebase.firestore();
 const settings = { timestampsInSnapshots: true };

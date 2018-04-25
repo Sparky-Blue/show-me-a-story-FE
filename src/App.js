@@ -79,6 +79,20 @@ class App extends Component {
             <div>
               <AudioControl
                 bot="set_the_scene"
+                buttonMessage="Once upon a time..."
+                changeMessageTo={this.changeMessageTo}
+                userId={userId}
+              />
+              <Message message={message} />
+            </div>
+          )}
+        </div>
+        <div className="audio-control">
+          {stageReady && (
+            <div>
+              <AudioControl
+                bot="Add_extra_props"
+                buttonMessage="Add more props or characters!"
                 changeMessageTo={this.changeMessageTo}
                 userId={userId}
               />

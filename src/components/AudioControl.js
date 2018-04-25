@@ -59,6 +59,7 @@ class AudioControl extends React.Component {
   };
 
   render() {
+    const { buttonMessage } = this.props;
     return (
       <Fragment>
         <button
@@ -66,7 +67,7 @@ class AudioControl extends React.Component {
           onClick={this.handleAudioControlClick}
           className="white-circle"
         >
-          Once upon a time...
+          {buttonMessage}
         </button>
         <Visualizer setWaveform={this.setWaveform} />
       </Fragment>
