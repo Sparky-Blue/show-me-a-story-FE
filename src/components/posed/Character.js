@@ -5,10 +5,13 @@ import { easing, tween } from "popmotion";
 const poseProps = {
   animateOnMount: true,
   draggable: true,
-  enter: {
+  enterPose: "enter",
+  preEnterPose: "exit",
+  exitPose: "exit",
+  exit: {
     x: -2000
   },
-  start: {
+  enter: {
     x: 50,
     transition: props =>
       tween({
