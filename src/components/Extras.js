@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./styles/Extras.css";
 import Extra from "./Extra";
+import { PoseGroup } from "react-pose";
 
 class Extras extends Component {
   state = { entering: true };
@@ -12,7 +13,7 @@ class Extras extends Component {
 
   render() {
     return (
-      <Fragment>
+      <PoseGroup>
         {this.props.things.map((thing, i) => {
           return (
             <Extra
@@ -24,7 +25,7 @@ class Extras extends Component {
             </Extra>
           );
         })}
-      </Fragment>
+      </PoseGroup>
     );
   }
 }

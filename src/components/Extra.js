@@ -5,10 +5,14 @@ import { spring } from "popmotion";
 
 const poseProps = {
   draggable: true,
-  up: {
+  animateOnMount: true,
+  enterPose: "enter",
+  preEnterPose: "exit",
+  exitPose: "exit",
+  exit: {
     y: "-1000%"
   },
-  down: {
+  enter: {
     y: "100%",
     transition: props =>
       spring({
