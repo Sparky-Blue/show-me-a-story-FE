@@ -25,7 +25,7 @@ export class Stage extends Component {
   render() {
     const { scene } = this.props;
     const characters = scene.characters ? scene.characters : [];
-    const things = scene.things ? Object.values(scene.things) : [];
+    const things = scene.things ? scene.things : [];
     const location = scene.location ? scene.location.url : "";
     const weather = scene.weather ? scene.weather : "none";
     return (
