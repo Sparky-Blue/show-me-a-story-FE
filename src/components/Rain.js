@@ -11,7 +11,7 @@ class Rain extends Component {
   toggle = () => this.setState({ entering: !this.state.entering });
 
   render() {
-    const rain = new Array(180).fill();
+    const rain = new Array(250).fill();
     return rain.map((raindrop, index) => {
       return (
         <Raindrop key={index} pose={this.state.entering ? "enter" : "exit"}>

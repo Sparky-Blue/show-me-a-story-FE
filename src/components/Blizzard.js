@@ -16,7 +16,7 @@ class Blizzard extends Component {
       return (
         <Blizz key={index} pose={this.state.entering ? "enter" : "exit"}>
           {index % 3 ? (
-            <i class="fas fa-circle" />
+            <i className="fas fa-circle" />
           ) : (
             <i className="far fa-snowflake small" />
           )}

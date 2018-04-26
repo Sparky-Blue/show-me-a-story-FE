@@ -12,7 +12,7 @@ class Snow extends Component {
   toggle = () => this.setState({ entering: !this.state.entering });
 
   render() {
-    const snow = new Array(35).fill();
+    const snow = new Array(55).fill();
     return snow.map((snowflake, index) => {
       return (
         <Fragment key={index + 0.1}>
