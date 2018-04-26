@@ -29,8 +29,6 @@ export class Stage extends Component {
     const weather = scene.weather ? scene.weather : "none";
     return (
       <Fragment>
-        {/* {!this.state.curtainsClosed && (
-          <PoseGroup> */}
         <div
           className={this.state.curtainsClosed ? "stage" : "stage solid"}
           style={{ backgroundImage: `url(${location})` }}
@@ -52,8 +50,6 @@ export class Stage extends Component {
           <Extras things={things} />
           <Weather weatherType={weather} />
         </div>
-        {/* </PoseGroup>
-        )} */}
       </Fragment>
     );
   }
