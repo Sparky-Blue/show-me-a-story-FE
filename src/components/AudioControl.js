@@ -21,14 +21,14 @@ class AudioControl extends React.Component {
     }
   };
 
-  togglePromptPLayed = () => {
+  togglePromptPlayed = () => {
     this.setState({
       promptPlayed: !this.state.promptPlayed
     });
   };
 
   handleAudioControlClick = e => {
-    this.togglePromptPLayed();
+    this.togglePromptPlayed();
     const { changeMessageTo, bot, userId } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -82,7 +82,7 @@ class AudioControl extends React.Component {
         />
         <button
           id="audio-control"
-          onClick={this.togglePromptPLayed}
+          onClick={this.togglePromptPlayed}
           className="white-circle"
         >
           {buttonMessage}
