@@ -5,6 +5,7 @@
   height: 80vh;
   margin: 0 auto;
   border-radius: 25px;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(20, 1fr);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }

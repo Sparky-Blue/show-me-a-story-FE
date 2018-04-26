@@ -33,10 +33,7 @@ export class Stage extends Component {
     return (
       <Fragment>
         {this.state.curtainsClosed ? (
-          <Screen
-            className="screen"
-            // pose={this.state.curtainsClosed ? "exit" : "enter"}
-          />
+          <Screen className="screen" />
         ) : (
           <div
             className="stage"
@@ -45,12 +42,12 @@ export class Stage extends Component {
             <PoseGroup>
               {characters.map((character, i) => {
                 return (
-                  <Character
-                    key={i}
-                    className="character"
-                    style={{ backgroundImage: `url(${character})` }}
-                  >
-                    {/* <img className="characterImg" src={character} alt="character" /> */}
+                  <Character key={i} className="character">
+                    <img
+                      className="characterImg"
+                      src={character}
+                      alt="character"
+                    />
                   </Character>
                 );
               })}
