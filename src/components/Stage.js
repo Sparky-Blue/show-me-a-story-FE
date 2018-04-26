@@ -14,7 +14,6 @@ export class Stage extends Component {
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(prevState.curtainsClosed, nextProps.scene.location);
     if (prevState.curtainsClosed && nextProps.scene.location) {
       return { curtainsClosed: false, fading: true };
     }
@@ -23,13 +22,12 @@ export class Stage extends Component {
 
   componentDidUpdate() {
     if (this.state.fading === true) {
-      console.log("here");
       this.fade();
     }
   }
 
   fade = () => {
-    setTimeout(this.setState({ fadeCurtain: true, fading: false }), 10000);
+    setTimeout(this.setState({ fadeCurtain: true, fading: false }), 2000);
   };
 
   render() {

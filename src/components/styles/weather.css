@@ -5,7 +5,8 @@
   height: 80vh;
   overflow: hidden;
   position: absolute;
-  top: 145px;
+  top: 150px;
+  border-radius: 25px;
 }
 
 .rain {

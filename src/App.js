@@ -7,7 +7,7 @@ import { Stage } from "./components/Stage";
 
 class App extends Component {
   state = {
-    message: "Passive",
+    message: "Just a moment...",
     stageReady: false,
     scene: {
       location: {},
