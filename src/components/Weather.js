@@ -14,7 +14,7 @@ import "./styles/weather.css";
 
 class Weather extends Component {
   render() {
-    const { weatherType } = this.props;
+    let { weatherType } = this.props;
     let weather;
     switch (weatherType) {
       case "rain":
@@ -38,18 +38,20 @@ class Weather extends Component {
       case "fog":
         weather = <Fog />;
         break;
-      // case "tornado":
-      //   weather = <Tornado />;
-      //   break;
+      case "tornado":
+        weatherType = "wind";
+        weather = <Wind />;
+        break;
       case "blizzard":
         weather = <Blizzard />;
         break;
       case "ice":
         weather = <Ice />;
         break;
-      // case "hail":
-      //   weather = <Hail />;
-      //   break;
+      case "hail":
+        weatherType = "blizzard";
+        weather = <Blizzard />;
+        break;
       case "rainbow":
         weather = <Rainbow />;
         break;

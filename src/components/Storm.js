@@ -7,7 +7,7 @@ class Storm extends Component {
     lightning: false
   };
   showLightning = () => {
-    const time = Math.random() * 3000 + 3000;
+    const time = Math.random() * 800 + 3000;
     setTimeout(() => {
       this.setState({ lightning: true });
       setTimeout(() => {
