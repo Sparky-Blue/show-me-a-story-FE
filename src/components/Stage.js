@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import "./styles/Stage.css";
 import Character from "./posed/Character";
 import "./styles/weather.css";
-import "./styles/Screen.css";
 import Extras from "./Extras";
 import Weather from "./Weather";
 import { PoseGroup } from "react-pose";
