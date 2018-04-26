@@ -65,7 +65,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.userId);
     const { message, stageReady, scene, userId } = this.state;
     return (
       <div className="container">
