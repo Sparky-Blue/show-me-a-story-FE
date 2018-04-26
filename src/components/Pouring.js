@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Raindrop from "./Raindrop";
+import CatsAndDogs from "./posed/CatsAndDogs";
 import "./styles/Rain.css";
 
 class Rain extends Component {
@@ -14,7 +14,7 @@ class Rain extends Component {
     const rain = new Array(6).fill();
     return rain.map((raindrop, index) => {
       return (
-        <Raindrop key={index} pose={this.state.entering ? "enter" : "exit"}>
+        <CatsAndDogs key={index} pose={this.state.entering ? "enter" : "exit"}>
           {index % 2 ? (
             <img
               src="http://pngimg.com/uploads/cat/cat_PNG103.png"
@@ -28,7 +28,7 @@ class Rain extends Component {
               style={index === 2 ? { height: "50vh" } : { height: "15vh" }}
             />
           )}
-        </Raindrop>
+        </CatsAndDogs>
       );
     });
   }
