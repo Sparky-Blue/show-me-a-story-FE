@@ -10,7 +10,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   opacity: 0;
-  transition: opacity 0.5s ease-in;
+  transition: opacity 0.9s ease-in;
 }
 
 .stage.solid {

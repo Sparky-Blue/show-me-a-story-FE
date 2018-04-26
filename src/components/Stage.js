@@ -9,15 +9,28 @@ import { PoseGroup } from "react-pose";
 export class Stage extends Component {
   state = {
     curtainsClosed: true,
-    fadeCurtain: false
+    fadeCurtain: false,
+    fading: false
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.scene.location) {
-      return { curtainsClosed: false };
+    console.log(prevState.curtainsClosed, nextProps.scene.location);
+    if (prevState.curtainsClosed && nextProps.scene.location) {
+      return { curtainsClosed: false, fading: true };
     }
     return null;
   }
+
+  componentDidUpdate() {
+    if (this.state.fading === true) {
+      console.log("here");
+      this.fade();
+    }
+  }
+
+  fade = () => {
+    setTimeout(this.setState({ fadeCurtain: true, fading: false }), 10000);
+  };
 
   render() {
     const { scene } = this.props;
@@ -38,7 +51,7 @@ export class Stage extends Component {
         )}
         {!this.state.curtainsClosed && (
           <div
-            className={this.state.curtainsClosed ? "stage" : "stage solid"}
+            className={!this.state.fadeCurtain ? "stage" : "stage solid"}
             style={{ backgroundImage: `url(${location})` }}
             key="1"
           >
