@@ -7,11 +7,14 @@ import "./styles/AudioControl.css";
 
 import LexAudio from "../utils/lexAudio";
 import lex from "../lex.png";
-// import hello from "./hello.mp3";
-// import question from "./question.mp3";
-// import ReactHowler from "react-howler"
+import hello from "./hello.mp3";
+import question from "./question.mp3";
+import ReactHowler from "react-howler";
 
 class AudioControl extends React.Component {
+  state = {
+    playing: false
+  };
   setWaveform = node => {
     if (node) {
       this.waveform = Waveform(node);
@@ -19,8 +22,8 @@ class AudioControl extends React.Component {
   };
 
   handleAudioControlClick = e => {
-    const { changeMessageTo, bot, togglePlaying } = this.props;
-    togglePlaying();
+    this.togglePlaying();
+    const { changeMessageTo, bot } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: "eu-west-1:3406189f-e003-43c7-a93b-95fa95a1b7b8"
@@ -62,12 +65,23 @@ class AudioControl extends React.Component {
     this.conversation.advanceConversation();
   };
 
+  togglePlaying = () => {
+    this.setState({
+      playing: !this.state.playing
+    });
+  };
+
   render() {
     return (
       <Fragment>
+        <ReactHowler
+          src={hello}
+          playing={this.state.playing}
+          onEnd={this.handleAudioControlClick}
+        />
         <button
           id="audio-control"
-          onClick={this.handleAudioControlClick}
+          onClick={this.togglePlaying}
           className="white-circle"
         >
           Once upon a time...

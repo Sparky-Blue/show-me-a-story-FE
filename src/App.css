@@ -31,3 +31,7 @@ canvas {
   width: 100vw;
   height: 100vh;
 }
+
+#play {
+  z-index: 20;
+}
