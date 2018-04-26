@@ -6,6 +6,9 @@ import Cloudy from "./Cloudy";
 import Sun from "./Sun";
 import Storm from "./Storm";
 import Fog from "./Fog";
+import Ice from "./Ice";
+import Rainbow from "./Rainbow";
+import "./styles/weather.css";
 
 class Weather extends Component {
   render() {
@@ -39,15 +42,15 @@ class Weather extends Component {
       // case "blizzard":
       //   weather = <Blizzard />;
       //   break;
-      // case "ice":
-      //   weather = <Ice />;
-      //   break;
+      case "ice":
+        weather = <Ice />;
+        break;
       // case "hail":
       //   weather = <Hail />;
       //   break;
-      // case "rainbow":
-      //   weather = <Rainbow />;
-      //   break;
+      case "rainbow":
+        weather = <Rainbow />;
+        break;
       // case "sandstorm":
       //   weather = <Sandstorm />;
       //   break;

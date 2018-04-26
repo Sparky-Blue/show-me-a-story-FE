@@ -33,7 +33,15 @@
 .ice {
 }
 
+#icicle {
+  height: 30vh;
+  opacity: 1 !important;
+  width: 100%;
+}
+
 .sun {
+  background: orange;
+  opacity: 0.2;
 }
 
 .sunshine_and_showers {
@@ -50,6 +58,10 @@
 }
 
 .rainbow {
+}
+#rainbow {
+  height: 90vh;
+  opacity: 0.4;
 }
 
 .sleet {
