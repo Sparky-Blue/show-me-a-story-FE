@@ -1,5 +1,4 @@
 import posed from "react-pose";
-// import "./styles/Extra.css";
 
 import { spring } from "popmotion";
 
