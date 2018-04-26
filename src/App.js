@@ -68,11 +68,6 @@ class App extends Component {
     const { message, stageReady, scene, userId } = this.state;
     return (
       <div className="container">
-        {/* <img
-          src="http://www.rjstax.com/wp-content/uploads/2014/03/Stage-Curtain-Shell-Cut-e1395618455582.png"
-          alt=""
-          className="curtains"
-        /> */}
         <div className="audio-control">
           {!this.state.scene.characters && (
             <div>
