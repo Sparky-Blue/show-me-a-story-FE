@@ -4,10 +4,10 @@ import { tween } from "popmotion";
 
 const poseProps = {
   enter: {
-    x: -1000
+    x: -800
   },
   exit: {
-    x: 1000,
+    x: 800,
     transition: props =>
       tween({
         ...props,

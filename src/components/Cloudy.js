@@ -11,12 +11,9 @@ class Cloud extends Component {
   toggle = () => this.setState({ entering: !this.state.entering });
 
   render() {
-    const clouds = new Array(2).fill();
+    const clouds = new Array(8).fill();
     return (
       <Fragment>
-        <div>
-          <i className="fas fa-cloud" />
-        </div>
         {clouds.map((cloud, index) => {
           return (
             <Clouds key={index} pose={this.state.entering ? "enter" : "exit"}>
