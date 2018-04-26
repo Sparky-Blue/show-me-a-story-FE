@@ -10,6 +10,7 @@
   justify-content: flex-end;
   opacity: 0;
   transition: opacity 0.5s ease-in;
+  z-index: -1;
 }
 
 .stage.solid {

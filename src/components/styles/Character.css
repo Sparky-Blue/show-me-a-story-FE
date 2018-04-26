@@ -5,4 +5,5 @@
 
 .characterImg {
   height: 30vh;
+  z-index: inherit;
 }

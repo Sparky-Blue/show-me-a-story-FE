@@ -47,8 +47,8 @@ export class Stage extends Component {
             })}
           </PoseGroup>
           <Extras things={things} />
-          <Weather weatherType={weather} />
         </div>
+        <Weather weatherType={weather} />
       </Fragment>
     );
   }
