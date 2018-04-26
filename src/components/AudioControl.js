@@ -1,5 +1,8 @@
 import React, { Fragment } from "react";
 import AWS from "aws-sdk";
+import ReactHowler from "react-howler";
+import hello from "./sounds/hello.mp3";
+import question from "./sounds/question.mp3";
 
 import Visualizer from "./Visualizer";
 import Waveform from "../utils/renderer";
@@ -8,13 +11,24 @@ import "./styles/AudioControl.css";
 import LexAudio from "../utils/lexAudio";
 
 class AudioControl extends React.Component {
+  state = {
+    promptPlayed: false
+  };
+
   setWaveform = node => {
     if (node) {
       this.waveform = Waveform(node);
     }
   };
 
+  togglePromptPLayed = () => {
+    this.setState({
+      promptPlayed: !this.state.promptPlayed
+    });
+  };
+
   handleAudioControlClick = e => {
+    this.togglePromptPLayed();
     const { changeMessageTo, bot, userId } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -61,9 +75,14 @@ class AudioControl extends React.Component {
     const { buttonMessage } = this.props;
     return (
       <Fragment>
+        <ReactHowler
+          src={this.props.bot === "set_the_scene" ? hello : question}
+          playing={this.state.promptPlayed}
+          onEnd={this.handleAudioControlClick}
+        />
         <button
           id="audio-control"
-          onClick={this.handleAudioControlClick}
+          onClick={this.togglePromptPLayed}
           className="white-circle"
         >
           {buttonMessage}
