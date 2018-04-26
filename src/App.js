@@ -73,7 +73,7 @@ class App extends Component {
             <div>
               <AudioControl
                 bot="set_the_scene"
-                buttonMessage="Once upon a time..."
+                buttonMessage="Start"
                 changeMessageTo={this.changeMessageTo}
                 userId={userId}
               />
@@ -84,7 +84,7 @@ class App extends Component {
             <div>
               <AudioControl
                 bot="Add_extra_props"
-                buttonMessage="Add more props or characters!"
+                buttonMessage="Add"
                 changeMessageTo={this.changeMessageTo}
                 userId={userId}
               />
