@@ -4,12 +4,16 @@ import Message from "./components/Message";
 import { db } from "./firebase";
 import "./App.css";
 import { Stage } from "./components/Stage";
+import hello from "./hello.mp3";
+import question from "./question.mp3";
+import ReactHowler from "react-howler";
 
 class App extends Component {
   state = {
     message: "Passive",
     stageReady: false,
-    scene: {}
+    scene: {},
+    playing: false
   };
 
   componentDidMount() {
@@ -45,7 +49,11 @@ class App extends Component {
       stageReady: !this.state.stageReady
     });
   };
-
+  togglePlaying = () => {
+    this.setState = {
+      playing: !this.state.playing
+    };
+  };
   render() {
     const { message, stageReady, scene } = this.state;
     return (
@@ -61,8 +69,14 @@ class App extends Component {
               <AudioControl
                 bot="set_the_scene"
                 changeMessageTo={this.changeMessageTo}
+                togglePlaying={this.togglePlaying}
               />
               <Message message={message} />
+              <ReactHowler
+                src={hello}
+                playing={this.state.playing}
+                onEnd={this.togglePlaying}
+              />
             </div>
           )}
         </div>

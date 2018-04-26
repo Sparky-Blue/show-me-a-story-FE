@@ -11,4 +11,10 @@
 #curtains {
   height: 100vh;
   z-index: 20;
+  position: absolute;
+  left: -100%;
+}
+
+.audio {
+  z-index: 20;
 }

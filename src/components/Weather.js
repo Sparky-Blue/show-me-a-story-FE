@@ -39,7 +39,11 @@ class Weather extends Component {
       default:
         weather = <div />;
     }
-    return <div className={`weather ${weatherType}`}>{weather}</div>;
+    return (
+      <div className={`weather ${weatherType}`}>
+        <Storm />
+      </div>
+    );
   }
 }
 

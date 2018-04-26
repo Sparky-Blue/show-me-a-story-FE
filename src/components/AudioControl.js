@@ -7,6 +7,9 @@ import "./styles/AudioControl.css";
 
 import LexAudio from "../utils/lexAudio";
 import lex from "../lex.png";
+// import hello from "./hello.mp3";
+// import question from "./question.mp3";
+// import ReactHowler from "react-howler"
 
 class AudioControl extends React.Component {
   setWaveform = node => {
@@ -16,7 +19,8 @@ class AudioControl extends React.Component {
   };
 
   handleAudioControlClick = e => {
-    const { changeMessageTo, bot } = this.props;
+    const { changeMessageTo, bot, togglePlaying } = this.props;
+    togglePlaying();
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
       IdentityPoolId: "eu-west-1:3406189f-e003-43c7-a93b-95fa95a1b7b8"

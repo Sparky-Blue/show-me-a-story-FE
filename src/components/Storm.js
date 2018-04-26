@@ -2,13 +2,21 @@ import React, { Component } from "react";
 import "./styles/Storm.css";
 //import Rain from "./Rain.js";
 //import Raindrop from "./Raindrop";
+import ReactHowler from "react-howler";
+
+<iframe
+  width="100%"
+  height="265"
+  src="https://clyp.it/bfnw5rtl/widget"
+  frameborder="0"
+/>;
 
 class Storm extends Component {
   state = {
     lightning: false
   };
   showLightning = () => {
-    const time = Math.random() * 55000 + 5000;
+    const time = Math.random() * 60000;
     console.log(time);
     setTimeout(() => {
       this.setState({ lightning: true });
@@ -16,6 +24,12 @@ class Storm extends Component {
         this.setState({ lightning: false });
       }, 200);
     }, time);
+    <ReactHowler
+      src="https://clyp.it/bfnw5rtl/widget"
+      format="audio/mpeg"
+      playing={true}
+      loop={true}
+    />;
   };
   render() {
     const position = Math.random() * 100 - 25;
@@ -37,6 +51,12 @@ class Storm extends Component {
         {/* <div id="rain">
           <Rain id="raindrops" />
         </div> */}
+        <ReactHowler
+          src="https://clyp.it/bfnw5rtl"
+          format="audio/mpeg"
+          playing={true}
+          loop={true}
+        />
         {this.state.lightning && (
           <img
             src="http://www.pngall.com/wp-content/uploads/2017/01/Lightning-High-Quality-PNG.png"
