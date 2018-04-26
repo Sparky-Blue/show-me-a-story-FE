@@ -27,27 +27,38 @@ export class Stage extends Component {
     const weather = scene.weather ? scene.weather : "none";
     return (
       <Fragment>
-        <div
-          className={this.state.curtainsClosed ? "stage" : "stage solid"}
-          style={{ backgroundImage: `url(${location})` }}
-          key="1"
-        >
-          <PoseGroup>
-            {characters.map((character, i) => {
-              return (
-                <Character key={i} className="character">
-                  <img
-                    className="characterImg"
-                    src={character}
-                    alt="character"
-                  />
-                </Character>
-              );
-            })}
-          </PoseGroup>
-          <Extras things={things} />
-          <Weather weatherType={weather} />
-        </div>
+        {this.state.curtainsClosed && (
+          <div className="welcome">
+            <img
+              className="penguin"
+              src="http://www.clker.com/cliparts/6/a/t/O/e/B/fairy-penguin-hi.png"
+              alt="Fairy Penguin clip art"
+            />
+          </div>
+        )}
+        {!this.state.curtainsClosed && (
+          <div
+            className={this.state.curtainsClosed ? "stage" : "stage solid"}
+            style={{ backgroundImage: `url(${location})` }}
+            key="1"
+          >
+            <PoseGroup>
+              {characters.map((character, i) => {
+                return (
+                  <Character key={i} className="character">
+                    <img
+                      className="characterImg"
+                      src={character}
+                      alt="character"
+                    />
+                  </Character>
+                );
+              })}
+            </PoseGroup>
+            <Extras things={things} />
+            <Weather weatherType={weather} />
+          </div>
+        )}
       </Fragment>
     );
   }
