@@ -4,14 +4,14 @@ import { tween } from "popmotion";
 
 const poseProps = {
   enter: {
-    x: -2000
+    x: -1500
   },
   exit: {
-    x: 2000,
+    x: 1500,
     transition: props =>
       tween({
         ...props,
-        duration: Math.random() * 8000 + 4000,
+        duration: Math.random() * 9000 + 4000,
         loop: "Infinity"
       })
   }

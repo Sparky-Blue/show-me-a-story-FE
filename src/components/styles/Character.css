@@ -1,4 +1,8 @@
 .character {
   z-index: 2;
-  height: 50vh;
+  height: 30vh;
+}
+
+.characterImg {
+  height: 30vh;
 }

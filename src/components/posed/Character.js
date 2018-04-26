@@ -9,10 +9,12 @@ const poseProps = {
   preEnterPose: "exit",
   exitPose: "exit",
   exit: {
-    x: -2000
+    x: -2000,
+    y: 20
   },
   enter: {
     x: 50,
+    y: 20,
     transition: props =>
       tween({
         ...props,
