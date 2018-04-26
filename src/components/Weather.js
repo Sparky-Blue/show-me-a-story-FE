@@ -5,6 +5,7 @@ import Snow from "./Snow";
 import Cloudy from "./Cloudy";
 import Sun from "./Sun";
 import Storm from "./Storm";
+import Fog from "./Fog";
 
 class Weather extends Component {
   render() {
@@ -29,9 +30,9 @@ class Weather extends Component {
       case "storm":
         weather = <Storm />;
         break;
-      // case "fog":
-      //   weather = <Fog />;
-      //   break;
+      case "fog":
+        weather = <Fog />;
+        break;
       // case "tornado":
       //   weather = <Tornado />;
       //   break;

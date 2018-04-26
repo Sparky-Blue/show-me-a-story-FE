@@ -7,3 +7,10 @@
 .fa-cloud.big {
   font-size: 20vh;
 }
+
+.fa-cloud.bigger {
+  font-size: 30vh;
+}
+.fa-cloud.extraBig {
+  font-size: 35vh;
+}
