@@ -82,7 +82,7 @@ class AudioControl extends React.Component {
         />
         <div
           id="audio-control"
-          onClick={this.togglePromptPLayed}
+          onClick={this.togglePromptPlayed}
           className="button"
         >
           <h1>{buttonMessage}</h1>

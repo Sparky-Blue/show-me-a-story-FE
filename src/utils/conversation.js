@@ -6,10 +6,10 @@ var DEFAULT_CONTENT_TYPE = "audio/x-l16; sample-rate=16000";
 var DEFAULT_USER_ID = "userId";
 var DEFAULT_ACCEPT_HEADER_VALUE = "audio/mpeg";
 var MESSAGES = Object.freeze({
-  PASSIVE: "Passive",
-  LISTENING: "Listening",
-  SENDING: "Sending",
-  SPEAKING: "Speaking"
+  PASSIVE: "I'm ready to go",
+  LISTENING: "I'm listening",
+  SENDING: "Just a moment",
+  SPEAKING: "I'm speaking"
 });
 
 var lexruntime,
