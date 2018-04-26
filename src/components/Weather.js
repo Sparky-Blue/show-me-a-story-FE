@@ -22,7 +22,7 @@ class Weather extends Component {
       case "snow":
         weather = <Snow />;
         break;
-      case "cloudy":
+      case "cloud":
         weather = <Cloudy />;
         break;
       case "sunny":
@@ -31,6 +31,27 @@ class Weather extends Component {
       case "storm":
         weather = <Storm />;
         break;
+      // case "fog":
+      //   weather = <Fog />;
+      //   break;
+      // case "tornado":
+      //   weather = <Tornado />;
+      //   break;
+      // case "blizzard":
+      //   weather = <Blizzard />;
+      //   break;
+      // case "ice":
+      //   weather = <Ice />;
+      //   break;
+      // case "hail":
+      //   weather = <Hail />;
+      //   break;
+      // case "rainbow":
+      //   weather = <Rainbow />;
+      //   break;
+      // case "sandstorm":
+      //   weather = <Sandstorm />;
+      //   break;
       default:
         weather = <div />;
     }

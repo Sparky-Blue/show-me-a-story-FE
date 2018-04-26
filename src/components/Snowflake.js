@@ -1,12 +1,12 @@
 import posed from "react-pose";
-import { easing, tween, spring, chain } from "popmotion";
+import { tween } from "popmotion";
 
 const posePropsSnowflake = {
   enter: {
     y: -2500
   },
   exit: {
-    y: 800,
+    y: 850,
     transition: props =>
       tween({
         ...props,
@@ -18,7 +18,7 @@ const posePropsSnowflake = {
 export const Snowflake = posed.div(posePropsSnowflake);
 
 const posePropsSnowfall = {
-  there: { opacity: 1, y: Math.random() * 50 + 750 },
+  there: { opacity: 1, y: "98%" },
   gone: {
     opacity: 0,
     transition: props =>

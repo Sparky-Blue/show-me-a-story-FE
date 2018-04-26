@@ -1,4 +1,9 @@
 .fa-cloud {
-  font-size: 20vh;
+  font-size: 15vh;
   color: silver;
+  opacity: 0.99;
+}
+
+.fa-cloud.big {
+  font-size: 20vh;
 }
