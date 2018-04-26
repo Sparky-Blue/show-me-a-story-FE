@@ -1,7 +1,6 @@
 import rec from "./recorder.js";
 var recorder,
   audioRecorder,
-  checkAudioSupport,
   audioSupported,
   playbackSource,
   UNSUPPORTED = "Audio is not supported.";

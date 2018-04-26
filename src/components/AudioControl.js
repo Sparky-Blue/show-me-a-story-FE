@@ -6,7 +6,6 @@ import Waveform from "../utils/renderer";
 import "./styles/AudioControl.css";
 
 import LexAudio from "../utils/lexAudio";
-import lex from "../lex.png";
 
 class AudioControl extends React.Component {
   setWaveform = node => {

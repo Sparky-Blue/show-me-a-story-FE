@@ -1,6 +1,6 @@
 import posed from "react-pose";
 import "../styles/Clouds.css";
-import { easing, tween, spring, chain } from "popmotion";
+import { tween } from "popmotion";
 
 const poseProps = {
   enter: {

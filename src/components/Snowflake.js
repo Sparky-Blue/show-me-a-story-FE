@@ -1,5 +1,5 @@
 import posed from "react-pose";
-import { easing, tween, spring, chain } from "popmotion";
+import { tween } from "popmotion";
 
 const posePropsSnowflake = {
   enter: {
