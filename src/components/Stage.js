@@ -10,7 +10,8 @@ import { PoseGroup } from "react-pose";
 
 export class Stage extends Component {
   state = {
-    curtainsClosed: true
+    curtainsClosed: true,
+    fadeCurtain: false
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -20,10 +21,6 @@ export class Stage extends Component {
     return null;
   }
 
-  changeMessageTo = message => {
-    this.setState({ message });
-  };
-
   render() {
     const { scene } = this.props;
     const characters = scene.characters ? scene.characters : [];
@@ -32,30 +29,31 @@ export class Stage extends Component {
     const weather = scene.weather ? scene.weather : "none";
     return (
       <Fragment>
-        {this.state.curtainsClosed ? (
-          <Screen className="screen" />
-        ) : (
-          <div
-            className="stage"
-            style={{ backgroundImage: `url(${location})` }}
-          >
-            <PoseGroup>
-              {characters.map((character, i) => {
-                return (
-                  <Character key={i} className="character">
-                    <img
-                      className="characterImg"
-                      src={character}
-                      alt="character"
-                    />
-                  </Character>
-                );
-              })}
-            </PoseGroup>
-            <Extras things={things} />
-            <Weather weatherType={weather} />
-          </div>
-        )}
+        {/* {!this.state.curtainsClosed && (
+          <PoseGroup> */}
+        <div
+          className={this.state.curtainsClosed ? "stage" : "stage solid"}
+          style={{ backgroundImage: `url(${location})` }}
+          key="1"
+        >
+          <PoseGroup>
+            {characters.map((character, i) => {
+              return (
+                <Character key={i} className="character">
+                  <img
+                    className="characterImg"
+                    src={character}
+                    alt="character"
+                  />
+                </Character>
+              );
+            })}
+          </PoseGroup>
+          <Extras things={things} />
+          <Weather weatherType={weather} />
+        </div>
+        {/* </PoseGroup>
+        )} */}
       </Fragment>
     );
   }
