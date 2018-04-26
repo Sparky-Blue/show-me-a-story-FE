@@ -9,6 +9,7 @@ import Fog from "./Fog";
 import Ice from "./Ice";
 import Blizzard from "./Blizzard";
 import Rainbow from "./Rainbow";
+import Pouring from "./Pouring";
 import "./styles/weather.css";
 
 class Weather extends Component {
@@ -52,9 +53,9 @@ class Weather extends Component {
       case "rainbow":
         weather = <Rainbow />;
         break;
-      // case "sandstorm":
-      //   weather = <Sandstorm />;
-      //   break;
+      case "pouring":
+        weather = <Pouring />;
+        break;
       default:
         weather = <div />;
     }

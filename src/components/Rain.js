@@ -16,18 +16,6 @@ class Rain extends Component {
       return (
         <Raindrop key={index} pose={this.state.entering ? "enter" : "exit"}>
           <i className="fas fa-tint" />
-          {/* {index % 2 ? (
-            <img
-              src="http://pngimg.com/uploads/cat/cat_PNG103.png"
-              alt=""
-              style={{ height: "20vh" }}
-            />
-          ) : (
-            <img
-              src="http://www.mseye-design.co.uk/wordpress/wp-content/uploads/2013/06/jumpingdog-e1370956242603.png"
-              alt=""
-            />
-          )} */}
         </Raindrop>
       );
     });
