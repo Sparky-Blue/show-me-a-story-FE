@@ -15,11 +15,12 @@ class App extends Component {
       characters: null,
       things: null
     },
-    userId: `${Date.now()}`
+    // userId: `${Date.now()}`
+    userId: `1524737020220`
   };
 
   componentDidMount() {
-    this.addNewScene(this.state.userId);
+    // this.addNewScene(this.state.userId);
     this.subscribeToDB(this.state.userId);
   }
 

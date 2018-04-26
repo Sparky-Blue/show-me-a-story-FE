@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import "./styles/Extras.css";
 import Extra from "./Extra";
 import { PoseGroup } from "react-pose";

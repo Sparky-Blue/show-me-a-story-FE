@@ -1,6 +1,6 @@
 import posed from "react-pose";
 import "./styles/Leaves.css";
-import { easing, tween, spring, chain } from "popmotion";
+import { easing, tween } from "popmotion";
 
 const poseProps = {
   enter: {
