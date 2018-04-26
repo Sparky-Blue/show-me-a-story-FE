@@ -4,9 +4,7 @@ import Message from "./components/Message";
 import { db } from "./firebase";
 import "./App.css";
 import { Stage } from "./components/Stage";
-// import hello from "./hello.mp3";
-// import question from "./question.mp3";
-// import ReactHowler from "react-howler";
+import Curtains from "./components/Curtains";
 
 class App extends Component {
   state = {

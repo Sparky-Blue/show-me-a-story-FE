@@ -6,14 +6,9 @@ import Extras from "./Extras";
 import Weather from "./Weather";
 import Curtains from "./Curtains";
 import LeftCurtain from "./posed/LeftCurtain";
-import hello from "./hello.mp3";
-// import question from "./question.mp3";
-// import ReactHowler from "react-howler";
-// import Sound from "react-sound";
 
 export class Stage extends Component {
   state = {
-    playing: false,
     extras: [
       {
         value: "hat",
@@ -40,10 +35,6 @@ export class Stage extends Component {
     this.setState({
       entering: !this.state.entering
     });
-  startPlaying = () =>
-    this.setState({
-      playing: !this.state.playing
-    });
 
   render() {
     const { scene } = this.props;
@@ -56,14 +47,6 @@ export class Stage extends Component {
     console.log(things);
     return (
       <div className="stage" style={{ backgroundImage: `url(${location})` }}>
-        {/* <audio controls className="audio">
-          <source src={hello} type="audio/mpeg" />
-        </audio> */}
-        {/* <audio controls className="audio">
-          <source src={question} type="audio/mpeg" />
-        </audio>
-        <ReactHowler src={hello} playing={this.state.playing} loop={false} /> */}
-        {/* <Sound url={hello} playStatus={Sound.status.PLAYING} loop={false} /> */}
         {characters.map(character => {
           return (
             <Character

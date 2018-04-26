@@ -3,33 +3,36 @@ import "./styles/Storm.css";
 //import Rain from "./Rain.js";
 //import Raindrop from "./Raindrop";
 import ReactHowler from "react-howler";
-
-<iframe
-  width="100%"
-  height="265"
-  src="https://clyp.it/bfnw5rtl/widget"
-  frameborder="0"
-/>;
-
+import thunder from "./sounds/thunder.mp3";
+import thunder2 from "./sounds/thunder2.mp3";
 class Storm extends Component {
   state = {
-    lightning: false
+    lightning: false,
+    thunder: false
   };
   showLightning = () => {
     const time = Math.random() * 60000;
     console.log(time);
     setTimeout(() => {
-      this.setState({ lightning: true });
+      this.setState({
+        lightning: true,
+        thunder: true
+      });
       setTimeout(() => {
         this.setState({ lightning: false });
       }, 200);
     }, time);
-    <ReactHowler
-      src="https://clyp.it/bfnw5rtl/widget"
-      format="audio/mpeg"
-      playing={true}
-      loop={true}
-    />;
+    // <ReactHowler
+    //   src={thunder}
+    //   format="audio/mpeg"
+    //   playing={true}
+    //   loop={true}
+    // />;
+  };
+  resetThunder = () => {
+    this.setState({
+      thunder: false
+    });
   };
   render() {
     const position = Math.random() * 100 - 25;
@@ -52,10 +55,9 @@ class Storm extends Component {
           <Rain id="raindrops" />
         </div> */}
         <ReactHowler
-          src="https://clyp.it/bfnw5rtl"
-          format="audio/mpeg"
-          playing={true}
-          loop={true}
+          src={thunder}
+          playing={this.state.thunder}
+          onEnd={this.resetThunder}
         />
         {this.state.lightning && (
           <img
