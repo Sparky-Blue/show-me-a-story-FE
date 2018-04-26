@@ -7,6 +7,7 @@ import Sun from "./Sun";
 import Storm from "./Storm";
 import Fog from "./Fog";
 import Ice from "./Ice";
+import Blizzard from "./Blizzard";
 import Rainbow from "./Rainbow";
 import "./styles/weather.css";
 
@@ -39,9 +40,9 @@ class Weather extends Component {
       // case "tornado":
       //   weather = <Tornado />;
       //   break;
-      // case "blizzard":
-      //   weather = <Blizzard />;
-      //   break;
+      case "blizzard":
+        weather = <Blizzard />;
+        break;
       case "ice":
         weather = <Ice />;
         break;
