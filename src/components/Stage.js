@@ -5,7 +5,6 @@ import "./styles/weather.css";
 import "./styles/Screen.css";
 import Extras from "./Extras";
 import Weather from "./Weather";
-import Screen from "./posed/Screen";
 import { PoseGroup } from "react-pose";
 
 export class Stage extends Component {
