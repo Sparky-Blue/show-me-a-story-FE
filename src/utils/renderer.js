@@ -40,10 +40,17 @@ const Waveform = function(canvas) {
         return;
       }
 
+      const gradient = canvasCtx.createLinearGradient(0, 0, 170, 0);
+      gradient.addColorStop("0", "red");
+      gradient.addColorStop("0.25", "orange");
+      gradient.addColorStop("0.5", "yellow");
+      gradient.addColorStop("0.75", "green");
+      gradient.addColorStop("1.0", "blue");
+
       canvasCtx.fillStyle = "rgb(249,250,252)";
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
       canvasCtx.lineWidth = 1;
-      canvasCtx.strokeStyle = "rgb(0,125,188)";
+      canvasCtx.strokeStyle = gradient;
       canvasCtx.beginPath();
 
       var sliceWidth = WIDTH * 1.0 / bufferLength;
