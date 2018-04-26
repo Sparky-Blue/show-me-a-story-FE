@@ -80,13 +80,13 @@ class AudioControl extends React.Component {
           playing={this.state.promptPlayed}
           onEnd={this.handleAudioControlClick}
         />
-        <button
+        <div
           id="audio-control"
           onClick={this.togglePromptPLayed}
-          className="white-circle"
+          className="button"
         >
-          {buttonMessage}
-        </button>
+          <h1>{buttonMessage}</h1>
+        </div>
         <Visualizer setWaveform={this.setWaveform} />
       </Fragment>
     );
