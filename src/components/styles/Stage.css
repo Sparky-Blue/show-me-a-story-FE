@@ -7,7 +7,7 @@
   border-radius: 25px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   opacity: 0;
   transition: opacity 2s ease-in;

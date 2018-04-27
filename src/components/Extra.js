@@ -9,10 +9,10 @@ const poseProps = {
   preEnterPose: "exit",
   exitPose: "exit",
   exit: {
-    y: "-1000%"
+    y: 1000
   },
   enter: {
-    y: "100%",
+    y: 200,
     transition: props =>
       spring({
         ...props
