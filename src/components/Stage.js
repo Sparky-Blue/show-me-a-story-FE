@@ -28,7 +28,6 @@ export class Stage extends Component {
       <Fragment>
         <div
           className={!this.state.curtainsClosed ? "welcome" : "welcome faded"}
-          //  hidden={!this.state.curtainsClosed}
         >
           <img
             className="penguin"
