@@ -12,8 +12,16 @@ import LexAudio from "../utils/lexAudio";
 
 class AudioControl extends React.Component {
   state = {
-    promptPlayed: false
+    promptPlayed: false,
+    active: true
   };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.message === "I'm ready to go...") {
+      return { active: true };
+    }
+    return null;
+  }
 
   setWaveform = node => {
     if (node) {
@@ -29,6 +37,9 @@ class AudioControl extends React.Component {
 
   handleAudioControlClick = e => {
     this.togglePromptPlayed();
+    this.setState({
+      active: false
+    });
     const { changeMessageTo, bot, userId } = this.props;
     const that = this;
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -46,10 +57,10 @@ class AudioControl extends React.Component {
       config,
       function(state) {
         changeMessageTo(state + "...");
-        if (state === "Listening") {
+        if (state === "I'm listening") {
           that.waveform.prepCanvas();
         }
-        if (state === "Sending") {
+        if (state === "Just a moment") {
           that.waveform.clearCanvas();
         }
       },
@@ -82,8 +93,8 @@ class AudioControl extends React.Component {
         />
         <div
           id="audio-control"
-          onClick={this.togglePromptPlayed}
-          className="button"
+          onClick={this.state.active ? this.togglePromptPlayed : null}
+          className={this.state.active ? "button" : "button disabled"}
         >
           <h1>{buttonMessage}</h1>
         </div>

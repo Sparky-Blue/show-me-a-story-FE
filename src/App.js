@@ -7,7 +7,7 @@ import { Stage } from "./components/Stage";
 
 class App extends Component {
   state = {
-    message: "Just a moment...",
+    message: "I'm ready to go...",
     stageReady: false,
     scene: {
       location: {},
@@ -16,7 +16,6 @@ class App extends Component {
       things: null
     },
     userId: `${Date.now()}`
-    // userId: `1524737020220`
   };
 
   componentDidMount() {
@@ -76,6 +75,7 @@ class App extends Component {
                 buttonMessage="Start"
                 changeMessageTo={this.changeMessageTo}
                 userId={userId}
+                message={this.state.message}
               />
               <Message message={message} />
             </div>
@@ -87,6 +87,7 @@ class App extends Component {
                 buttonMessage="Add"
                 changeMessageTo={this.changeMessageTo}
                 userId={userId}
+                message={this.state.message}
               />
               <Message message={message} />
             </div>

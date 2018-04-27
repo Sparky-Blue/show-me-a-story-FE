@@ -51,3 +51,8 @@ body {
 .button h1 {
   margin-top: 43px;
 }
+
+.button.disabled {
+  color: #dbd2d2;
+  text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
+}
