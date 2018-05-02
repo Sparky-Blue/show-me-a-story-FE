@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Snowflake, Snowfall } from "./Snowflake";
-import "./styles/Rain.css";
+import { Snowflake, Snowfall } from "./posed/Snowflake";
 import "./styles/Snow.css";
 
 class Snow extends Component {

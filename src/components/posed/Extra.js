@@ -16,8 +16,6 @@ const poseProps = {
     transition: props =>
       spring({
         ...props
-        // ease: easing.backInOut,
-        // duration: 1000
       })
   }
 };

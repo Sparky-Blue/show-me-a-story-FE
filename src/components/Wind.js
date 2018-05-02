@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Leaves from "./Leaves";
+import Leaves from "./posed/Leaves";
 import "./styles/Leaves.css";
 
 class Wind extends Component {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/Extras.css";
-import Extra from "./Extra";
+import Extra from "./posed/Extra";
 import { PoseGroup } from "react-pose";
 
 class Extras extends Component {

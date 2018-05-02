@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Raindrop from "./Raindrop";
+import Raindrop from "./posed/Raindrop";
 import "./styles/Rain.css";
 
 class Rain extends Component {

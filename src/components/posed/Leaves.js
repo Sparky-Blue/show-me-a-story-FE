@@ -1,21 +1,21 @@
 import posed from "react-pose";
-import "./styles/Leaves.css";
+import "../styles/Leaves.css";
 import { tween } from "popmotion";
 
 const poseProps = {
   enter: {
-    y: -1000
+    x: -1500
   },
   exit: {
-    y: 850,
+    x: 1500,
     transition: props =>
       tween({
         ...props,
-        duration: Math.random() * 7000 + 2000,
+        duration: Math.random() * 9000 + 4000,
         loop: "Infinity"
       })
   }
 };
-const Raindrop = posed.div(poseProps);
+const Leaves = posed.div(poseProps);
 
-export default Raindrop;
+export default Leaves;
