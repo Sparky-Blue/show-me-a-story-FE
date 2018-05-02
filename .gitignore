@@ -24,3 +24,5 @@ firebaseConfig.js
 src/utils/db.js
 
 netlify.toml
+
+.netlify
